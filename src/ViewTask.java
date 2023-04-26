@@ -97,18 +97,12 @@ public class ViewTask {
         BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         Background background = new Background(backgroundImage);
         root.setBackground(background);
-        HBox seg2 = new HBox(removeTaskButton, editTaskButton, markAsReadButton);
-        seg2.setAlignment(Pos.CENTER);
-        HBox seg1 = new HBox(taskDatePicker, addTaskButton);
-        seg1.setAlignment(Pos.CENTER);
-        VBox part1 = new VBox(taskDescField, seg1);
-        part1.setAlignment(Pos.CENTER);
-        HBox fin = new HBox(part1);
-        fin.setAlignment(Pos.CENTER);
-        root.getChildren().addAll(
-                fin,
-                taskListView,
-                seg2);
+
+        HBox hbox1 = new HBox(new VBox(taskDescField, new HBox(taskDatePicker, addTaskButton)));
+        hbox1.setAlignment(Pos.CENTER);
+        HBox hbox2 = new HBox(removeTaskButton, editTaskButton, markAsReadButton);
+        hbox2.setAlignment(Pos.CENTER);
+        root.getChildren().addAll(hbox1,taskListView, hbox2);
         scene = new Scene(root, 400, 500);
     }
 }
