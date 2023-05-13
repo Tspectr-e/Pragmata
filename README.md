@@ -1,8 +1,7 @@
- ## Folder Structure
+This is a copy of our project.
+Check this repositories for the main project: https://github.com/saged-sama/Pragmata
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Contributors:
+Emon Khan
+Mahmudul Hasan Sajid
+Sadman Moyeed
