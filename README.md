@@ -39,5 +39,5 @@ Emon Khan</br>
 Mahmudul Hasan Sajid</br>
 Sadman Moyeed</br>
 
-<font color="red">This is a copy version of our project.<font color="red"><br/>
-<font color="red">Check this repositories for the main project:<font color="red"> https://github.com/saged-sama/Pragmata
+<font color="red">This is a copy version of our project.<font><br/>
+<font color="red">Check this repositories for the main project:<font> https://github.com/saged-sama/Pragmata
