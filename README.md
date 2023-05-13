@@ -1,6 +1,3 @@
-This is a copy version of our project.<br/>
-Check this repositories for the main project: https://github.com/saged-sama/Pragmata
-
 ## Pragmata
 
 Pragmata is a todo list app with which users can keep track of their daily tasks
@@ -40,4 +37,6 @@ _Java, JavaFX, Gluon SceneBuilder_
 ## Contributors:</br>
 Emon Khan</br>
 Mahmudul Hasan Sajid</br>
-Sadman Moyeed
+Sadman Moyeed</br>
+<font color="red">This is a copy version of our project.<br/>
+Check this repositories for the main project:<font color="red"> https://github.com/saged-sama/Pragmata
