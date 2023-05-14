@@ -59,7 +59,14 @@ public class ViewTask {
         addTaskButton.setOnAction(e -> {
             String description = taskDescField.getText();
             LocalDate dueDate = taskDatePicker.getValue();
-            if (description != null && !description.isEmpty() && dueDate != null) {
+            boolean is_found = false;
+            for (Task task : tasklist.tasks) {
+                String ddescription = task.getDescription();
+                LocalDate ddueDate = task.getdueDate();
+                boolean is_completed = task.completed;
+                if(description.equalsIgnoreCase(ddescription) && ddueDate.toString().equalsIgnoreCase(dueDate.toString()) && !is_completed)is_found = true;
+            }
+            if (description != null && !description.isEmpty() && dueDate != null && !is_found) {
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter("tasks.txt", true))) {
                     writer.write(description + "#" + dueDate.toString() + "\n");
                     writer.flush();
@@ -72,6 +79,8 @@ public class ViewTask {
                 taskListView.getItems().add(task.toString());
                 taskDescField.clear();
                 taskDatePicker.setValue(null);
+            }else if (description != null && !description.isEmpty() && dueDate != null && is_found) {
+                warn("Already Exist", "You Can't Add a Duplicate Task\nAt First you Need to Complete the Previous one!");
             } else if (description == null || description.isEmpty()) {
                 warn("Description Empty", "Please Add a Description");
             } else {
@@ -118,11 +127,18 @@ public class ViewTask {
 
                 Optional<CustomInputData> result = dialog.showAndWait();
                 result.ifPresent(customInputData -> {
-                    if (selectIndx >= 0) {
+                    boolean is_found = false;
+                    for (Task task : tasklist.tasks) {
+                        String ddescription = task.getDescription();
+                        LocalDate ddueDate = task.getdueDate();
+                        boolean is_completed = task.completed;
+                        if(customInputData.getDescription().equalsIgnoreCase(ddescription) && customInputData.getDate().toString().equalsIgnoreCase(ddueDate.toString()) && !is_completed)is_found = true;
+                    }
+                    if (selectIndx >= 0 && !is_found) {
                         Task task = new Task(customInputData.getDescription(), customInputData.getDate(), false);
                         tasklist.editTask(selectIndx, task);
                         taskListView.getItems().set(selectIndx, task.toString());
-                    }
+                    }else warn("Already Exist", "You Can't Replace a Duplicate Task\nAt First you Need to Complete the Previous one!");
                 });
                 saveTask();
             }else if (selectIndx >= 0)warn("Already Completed!", "As This Task Has Already been Completed, You Can't Modify It.\nYou Can Only Delete It Instead of Editing It.");
@@ -148,7 +164,11 @@ public class ViewTask {
                     taskListView.getItems().set(selectedIndex, modifiedItem);
                 }
                 saveTask();
-            }else if(selectIndx >= 0)warn("Already completed!", "This task has already been completed!");
+            }
+            else if(selectIndx >= 0)warn("Already completed!", "This task has already been completed!");
+            else{
+                warn("No Task Selected", "Please Select the Task to Mark as Complete");
+            }
         });
         root = new VBox();
         root.setAlignment(Pos.CENTER);
