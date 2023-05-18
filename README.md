@@ -1,16 +1,13 @@
 ## Pragmata
-
-Pragmata is a todo list app with which users can keep track of their daily tasks
+In our daily lives, we often find ourselves struggling to remember important tasks that need to be completed. However, taking brief notes on these tasks can greatly enhance our productivity and help us make the most of our time. This is where Pragmata, a handy to-do list app, comes in. With Pragmata, users can jot down the necessary tasks and even assign them a specific deadline for completion.
 
 ## Features
 
 In our app, we seek to provide the following features:
-- create new tasks list
 - create new task
 - add task deadline
 - update a task
 - mark as complete
-- remove a tasks list
 - remove a task
 
 ## Class Structure
@@ -19,7 +16,7 @@ The app will have the following class structure
 - **App**: This is the main app class that extends the JavaFX Application class
 - **Task**: Represents each tasks
 - **TaskList**: Lists some tasks
-- **TaskView**: Handles the _GUI_ of a list
+- **ViewTask**: Handles the _GUI_ of a list
 
 ## Folder Structure
 
