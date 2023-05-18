@@ -37,5 +37,5 @@ Mahmudul Hasan Sajid</br>
 Sadman Moyeed</br>
 
 <font color="red">This is a copy version of our project.<font><br/>
-<font color="red">Check Project Report for More Details<font><br/>
+<font color="red">Check the project report for more details<font><br/>
 <font color="red">Check this repositories for the main project:<font> https://github.com/saged-sama/Pragmata
