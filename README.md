@@ -31,10 +31,11 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 _Java, JavaFX, Gluon SceneBuilder_
 
-## Contributors:</br>
+## Contributors</br>
 Emon Khan</br>
 Mahmudul Hasan Sajid</br>
 Sadman Moyeed</br>
 
 <font color="red">This is a copy version of our project.<font><br/>
+<font color="red">Check Project Report for More Details<font><br/>
 <font color="red">Check this repositories for the main project:<font> https://github.com/saged-sama/Pragmata
